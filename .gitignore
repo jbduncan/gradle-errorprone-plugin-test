@@ -1,0 +1,11 @@
+### Gradle ###
+.gradle/
+build/
+
+# Avoid ignoring Gradle wrapper jar file, in case we decide to ignore .jar files in the future
+!gradle-wrapper.jar
+
+### IntelliJ IDEA ###
+.idea/
+*.iml
+*.iws

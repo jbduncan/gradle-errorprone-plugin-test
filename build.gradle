@@ -1,0 +1,32 @@
+plugins {
+  // Including 'net.ltgt.apt' at the same time as 'net.ltgt.errorprone' causes
+  // a java.lang.reflect.InvocationTargetException when running
+  // `.\gradle.bat build` on Windows or `./gradlew build` on Cygwin.
+  id 'net.ltgt.apt' version '0.6'
+  id 'net.ltgt.errorprone' version '0.0.8'
+}
+
+group 'org.jbduncan'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'application'
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+mainClassName = "${group}.Application"
+
+ext.testVersions = [
+  junit: '4.12'
+]
+
+repositories {
+  jcenter()
+}
+
+dependencies {
+  testCompile "junit:junit:${testVersions.junit}"
+}
